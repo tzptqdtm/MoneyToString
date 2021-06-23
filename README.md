@@ -1,6 +1,6 @@
 # MoneyToString
 
-##Тестовое задание в компанию Университет СИНЕРГИЯ
+## Тестовое задание в компанию Университет СИНЕРГИЯ
 
 You work at a bank and have been asked to produce a system that takes a numerical monetary value in dollars and cents and produces its English equivalent - so that it can be printed on physical paper cheques.
 
