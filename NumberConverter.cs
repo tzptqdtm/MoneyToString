@@ -9,7 +9,7 @@ namespace MoneyToString
     public static class NumberConverter
     {
         /// <summary>
-        /// Метод возвращает дробное число в виде строки с указанием валюты
+        /// Метод возвращает дробное число в виде строки с указанием валюты (Dollar)
         /// </summary>
         /// <param name="number">Положительное число от 0 до 2,147,483,647 с дробной частью</param>
         /// <returns>Представление числа в виде строки с указанием валюты (Dollar)</returns>
@@ -33,16 +33,21 @@ namespace MoneyToString
         /// <summary>
         /// Метод возвращает целое число в виде строки
         /// </summary>
-        /// <param name="num">Положительное число от 0 до 2,147,483,647</param>
+        /// <param name="number">Положительное число от 0 до 2,147,483,647</param>
         /// <returns>Представление целого числа в виде строки</returns>
-        public static string NumberToWords(int num)
+        public static string NumberToWords(int number)
         {
-            if (num == 0)
+            if (number < 0 || number > Int32.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException("number", "Число не попадает в диапазон 0 - " + Int32.MaxValue);
+            }
+
+            if (number == 0)
             {
                 return "Zero";
             }
             string result = "";
-            int toProcess = num;
+            int toProcess = number;
             int magnitude = 0;
             while (toProcess > 0)
             {
